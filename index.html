@@ -56,61 +56,120 @@
 					
 				</div>
 				<div class="modal-body" >
-					<div style="width: 100%; margin-bottom: 1em">
-						<label for='severity'><strong>Severity</strong></label>
-						<select class="browser-default custom-select" 
-								 id='severity'>
-							<option value="1">Severity 1</option>
-							<option value="2">Severity 2</option>
-							<option value="3">Severity 3</option>
-							<option value="4">Severity 4</option>
-						</select>
-						
-					</div>
-					<div style="width: 100%; margin-bottom: 1em">
-						<label for='userContainer'><strong>Assign</strong></label>
-						<div class="input-group flex-nowrap"   id='userContainer'>
-							<input list="users" 
-									placeholder="Chose a user" style="width: 100%;" class="form-control">
-							<datalist style="width: 100%;" id="users">
-								<option style="width: 100%;" >Damon Pham</option>
-							</datalist>
+					<div class="modal-body-content show">
+						<div style="width: 100%; margin-bottom: 1em">
+							<label for='severity'><strong>Severity</strong></label>
+							<select class="browser-default custom-select" 
+									 id='severity'>
+								<option value="1">Severity 1</option>
+								<option value="2">Severity 2</option>
+								<option value="3">Severity 3</option>
+								<option value="4">Severity 4</option>
+							</select>
+							
+						</div>
+						<div style="width: 100%; margin-bottom: 1em">
+							<label for='userContainer'><strong>Assign</strong></label>
+							<div class="input-group flex-nowrap"   id='userContainer'>
+								<input list="users" 
+										placeholder="Chose a user" style="width: 100%;" class="form-control">
+								<datalist style="width: 100%;" id="users">
+									<option style="width: 100%;" >Damon Pham</option>
+								</datalist>
+							</div>
+							
 						</div>
 						
-					</div>
-					
-					
-					<form id='myForm'>
 						
-						<div class="form-group">
-							<label for="privateComment"><strong>Private Comment</strong></label>
-							<textarea rows='3'  type="text" class="form-control" id="privateComment"></textarea>
-						</div>
-						<div class="form-group" >
-							<label for="timeContainer"><strong>Spent times</strong></label>
-							<div style="display: flex;" class='row' id='timeContainer'>
-								<div class='col' style="width: 100%; display: flex; align-items: center;">
-									<select id="spentHour" class="form-control col-11" >
-										<option ></option>
-									</select>
-									<strong class='col-1'>H</strong>
-								</div>
-								<div class='col' style="width: 100%; display: flex; align-items: center;">
-									<select id="spentMinute" class="form-control col-11"  >
-										<option>0</option>
-										<option ></option>
-									</select>
-									<strong class='col-1'>M</strong>
+						<form id='myForm'>
+							
+							<div class="form-group">
+								<label for="privateComment"><strong>Private Comment</strong></label>
+								<textarea rows='3'  type="text" class="form-control" id="privateComment"></textarea>
+							</div>
+							<div class="form-group" >
+								<label for="timeContainer"><strong>Spent times</strong></label>
+								<div style="display: flex;" class='row' id='timeContainer'>
+									<div class='col' style="width: 100%; display: flex; align-items: center;">
+										<select id="spentHour" class="form-control col-11" >
+											<option ></option>
+										</select>
+										<strong class='col-1'>H</strong>
+									</div>
+									<div class='col' style="width: 100%; display: flex; align-items: center;">
+										<select id="spentMinute" class="form-control col-11"  >
+											<option>0</option>
+											<option ></option>
+										</select>
+										<strong class='col-1'>M</strong>
+									</div>
 								</div>
 							</div>
+							<input id='userFile' type="file" name="myFile" ref="myFiles" class="form">
+							<div style="display: flex; flex-direction: row-reverse;">
+								<button id='submitCommentButton' class='btn btn-danger'>
+									Submit
+								</button>
+							</div>
+						</form>
+					</div>
+					<div class="modal-body-content">
+						<div style="width: 100%; margin-bottom: 1em">
+							<label for='severity'><strong>Severity</strong></label>
+							<select class="browser-default custom-select" 
+									 id='severity'>
+								<option value="1">Severity 1</option>
+								<option value="2">Severity 2</option>
+								<option value="3">Severity 3</option>
+								<option value="4">Severity 4</option>
+							</select>
+							
 						</div>
-						<input id='userFile' type="file" name="myFile" ref="myFiles" class="form">
-						<div style="display: flex; flex-direction: row-reverse;">
-							<button id='submitCommentButton' class='btn btn-danger'>
-								Submit
-							</button>
+						<div style="width: 100%; margin-bottom: 1em">
+							<label for='userContainer'><strong>Assign</strong></label>
+							<div class="input-group flex-nowrap"   id='userContainer'>
+								<input list="users" 
+										placeholder="Chose a user" style="width: 100%;" class="form-control">
+								<datalist style="width: 100%;" id="users">
+									<option style="width: 100%;" >Damon Pham</option>
+								</datalist>
+							</div>
+							
 						</div>
-					</form>
+						
+						
+						<form id='myForm'>
+							
+							<div class="form-group">
+								<label for="privateComment"><strong>Private Comment</strong></label>
+								<textarea rows='3'  type="text" class="form-control" id="privateComment">Handover</textarea>
+							</div>
+							<div class="form-group" >
+								<label for="timeContainer"><strong>Spent times</strong></label>
+								<div style="display: flex;" class='row' id='timeContainer'>
+									<div class='col' style="width: 100%; display: flex; align-items: center;">
+										<select id="spentHour" class="form-control col-11" >
+											<option ></option>
+										</select>
+										<strong class='col-1'>H</strong>
+									</div>
+									<div class='col' style="width: 100%; display: flex; align-items: center;">
+										<select id="spentMinute" class="form-control col-11"  >
+											<option>0</option>
+											<option ></option>
+										</select>
+										<strong class='col-1'>M</strong>
+									</div>
+								</div>
+							</div>
+							<input id='userFile' type="file" name="myFile" ref="myFiles" class="form">
+							<div style="display: flex; flex-direction: row-reverse;">
+								<button id='submitCommentButton' class='btn btn-danger'>
+									Submit
+								</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

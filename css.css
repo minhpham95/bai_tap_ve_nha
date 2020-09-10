@@ -410,3 +410,17 @@ span.duration{
 .modaltabs li b.active{
     color: #fcd305 !important;
 }
+
+.modal-body-content{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.modal-body-content.show{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.4s;
+}

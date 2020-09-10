@@ -32,8 +32,19 @@
       $('.center-info .center-info-detail:nth-child('+index+')').addClass('appear');
     });
 
-    $(".setting").on('click', function(){
-      $(".functionality").toggleClass('active');
+    // $(".setting").on('click', function(){
+    //   $(".functionality").toggleClass('active');
+    // });
+
+    $('ul.modaltabs li b').click(function() {
+      $('ul.modaltabs li b').removeClass('active');
+      $(this).addClass('active');
+  
+      index = $(this).parents().index() + 1;
+      console.log(index);
+  
+      $('.modal-body .modal-body-content').removeClass('show');
+      $('.modal-body .modal-body-content:nth-child('+index+')').addClass('show');
     });
 
     $('#dtBasicExample').DataTable();
