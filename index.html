@@ -34,11 +34,26 @@
 	  <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
-				<div class="modal-header bg-dark">
-					<strong class="text-white text-uppercase font-weight-bolder">Comment<i class="text-white far fa-comment-alt"></i></strong>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<i class="fa fa-times text-white"></i>
-					</button>
+				<div class="modal-header bg-dark" style="background-color: #000;">
+					<!-- <strong class="text-white text-uppercase font-weight-bolder">Comment<i class="text-white far fa-comment-alt"></i></strong> -->
+					<div class="row">
+						<div class="col-sm-11" style="
+						padding-top: 12px;
+						margin-bottom: -12px;
+					">
+							<ul class="modaltabs list-inline">
+								<li class="list-inline-item pr-2"><b class="text-white text-uppercase font-weight-bolder active">Comment</b></li>
+								<li class="list-inline-item pr-2"><b class="text-white text-uppercase font-weight-bolder">Handover</b></li>
+								<li class="list-inline-item pr-2"><b class="text-white text-uppercase font-weight-bolder">Escalation</b></li>
+							</ul>
+						</div>
+						<div class="col-sm-1">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<i class="fa fa-times text-white"></i>
+							</button>
+						</div>
+					</div>
+					
 				</div>
 				<div class="modal-body" >
 					<div style="width: 100%; margin-bottom: 1em">
@@ -324,7 +339,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-8 center-info" style="background-color: #e5e6e6;top: 51px;
+			<div class="col-sm-8 center-info" style="background-color: #e5e6e6;top: 58px;
 			bottom: 0;
 			left: 25%; height: fit-content; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33); position: absolute;">	
 				<div class="center-info-detail appear">

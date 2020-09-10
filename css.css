@@ -58,7 +58,7 @@
     box-sizing: border-box;
 
     position: fixed;
-    top: 51px;
+    top: 56px;
     bottom: 0;
     left: 0;
     width: 30%;
@@ -173,7 +173,7 @@
 }
 
 .tabs{
-    top: 50px;
+    top: 54px;
     bottom: 0;
     left: 91.8%;
     height: 100%;
@@ -401,4 +401,12 @@ span.duration{
 
 .card{
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.33);
+}
+
+.modaltabs li b{
+    cursor: pointer;
+}
+
+.modaltabs li b.active{
+    color: #fcd305 !important;
 }
