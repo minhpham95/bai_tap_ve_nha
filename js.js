@@ -25,7 +25,7 @@
       $('ul.ultabs li').removeClass('active');
       $(this).addClass('active');
   
-      index = $(this).index() + 1;
+      index = $(this).index() + 3;
       console.log(index);
   
       $('.center-info .center-info-detail').removeClass('appear');
@@ -47,7 +47,7 @@
       $('.modal-body .modal-body-content:nth-child('+index+')').addClass('show');
     });
 
-    $('#dtBasicExample').DataTable();
+    $('#dtBasicExample').DataTable({searching: false, paging: false, info: false});
     //$('.dataTables_length').addClass('bs-select');
     $(".equipment-list-title").on('click', function(){
       $(".table-equipment").toggleClass('deactive');

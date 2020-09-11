@@ -10,27 +10,7 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
  	<link rel="stylesheet" href="css.css">
 </head>
-<body >
-
-	<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-				<span aria-hidden="true">&times;</span>
-			  </button>
-			</div>
-			<div class="modal-body">
-			  ...
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			  <button type="button" class="btn btn-primary">Save changes</button>
-			</div>
-		  </div>
-		</div>
-	  </div> -->
+<body>
 	  <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
@@ -143,6 +123,63 @@
 							<div class="form-group">
 								<label for="privateComment"><strong>Private Comment</strong></label>
 								<textarea rows='3'  type="text" class="form-control" id="privateComment">Handover</textarea>
+							</div>
+							<div class="form-group" >
+								<label for="timeContainer"><strong>Spent times</strong></label>
+								<div style="display: flex;" class='row' id='timeContainer'>
+									<div class='col' style="width: 100%; display: flex; align-items: center;">
+										<select id="spentHour" class="form-control col-11" >
+											<option ></option>
+										</select>
+										<strong class='col-1'>H</strong>
+									</div>
+									<div class='col' style="width: 100%; display: flex; align-items: center;">
+										<select id="spentMinute" class="form-control col-11"  >
+											<option>0</option>
+											<option ></option>
+										</select>
+										<strong class='col-1'>M</strong>
+									</div>
+								</div>
+							</div>
+							<input id='userFile' type="file" name="myFile" ref="myFiles" class="form">
+							<div style="display: flex; flex-direction: row-reverse;">
+								<button id='submitCommentButton' class='btn btn-danger'>
+									Submit
+								</button>
+							</div>
+						</form>
+					</div>
+					<div class="modal-body-content">
+						<div style="width: 100%; margin-bottom: 1em">
+							<label for='severity'><strong>Severity</strong></label>
+							<select class="browser-default custom-select" 
+									 id='severity'>
+								<option value="1">Severity 1</option>
+								<option value="2">Severity 2</option>
+								<option value="3">Severity 3</option>
+								<option value="4">Severity 4</option>
+							</select>
+							
+						</div>
+						<div style="width: 100%; margin-bottom: 1em">
+							<label for='userContainer'><strong>Assign</strong></label>
+							<div class="input-group flex-nowrap"   id='userContainer'>
+								<input list="users" 
+										placeholder="Chose a user" style="width: 100%;" class="form-control">
+								<datalist style="width: 100%;" id="users">
+									<option style="width: 100%;" >Damon Pham</option>
+								</datalist>
+							</div>
+							
+						</div>
+						
+						
+						<form id='myForm'>
+							
+							<div class="form-group">
+								<label for="privateComment"><strong>Private Comment</strong></label>
+								<textarea rows='3'  type="text" class="form-control" id="privateComment">Escalation</textarea>
 							</div>
 							<div class="form-group" >
 								<label for="timeContainer"><strong>Spent times</strong></label>
@@ -400,54 +437,65 @@
 			</div>
 			<div class="col-sm-8 center-info" style="background-color: #e5e6e6;top: 58px;
 			bottom: 0;
-			left: 25%; height: fit-content; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33); position: absolute;">	
-				<div class="center-info-detail appear">
-					<div class="container time-card">
-						<div class="row row-cols-5">
-							<div class="col ">
-								<div class="assignment-delay">Assignment Delay</div>
-								<div class="time text-center">00:00</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
+			left: 25%; height: fit-content; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33); position: absolute;padding-left: 0px;">
+			
+				<div class="breadcrumb">
+					<a href="#">Created</a>
+					<a href="#" class="active">Pending</a>
+					<a href="#">In progress</a>
+					<a href="#">Resolved</a>
+					<a href="#">Closed</a>
+				</div>
+
+				<div class="container time-card" style="margin-top: 40px;">
+					<div class="row row-cols-5">
+						<div class="col ">
+							<div class="assignment-delay">Assignment Delay</div>
+							<div class="time text-center">00:00</div>
 						</div>
-						<div class="row row-cols-5">
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-							<div class="col ">
-								<div class="assignment-delay">Assignment</div>
-								<div class="time text-center">7/16/2020 4:58 AM</div>
-							</div>
-						</div>	
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+					</div>
+					<div class="row row-cols-5">
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
+						<div class="col ">
+							<div class="assignment-delay">Assignment</div>
+							<div class="time text-center">7/16/2020 4:58 AM</div>
+						</div>
 					</div>	
+				</div>	
+
+				<div class="center-info-detail appear">
+					
 					<div class="container request-detail-tab">
 						<div class="row">
 							<div class="col-sm-12">
@@ -462,7 +510,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row equipment-list" style="background: #dd5928;">
+						<div class="row equipment-list">
 							<div class="equipment-list-title">EQUIPMENT</div>
 							<div class="table-equipment">
 								<table id="dtBasicExample" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -479,7 +527,22 @@
 									<tbody>
 									  <tr>
 										<td>41641</td>
+										<td>bon-aws-paris-01</td>
+										<td>e-control</td>
+									  </tr>
+									  <tr>
+										<td>41642</td>
 										<td>aon-aws-paris-01</td>
+										<td>e-control</td>
+									  </tr>
+									  <tr>
+										<td>41643</td>
+										<td>con-aws-paris-01</td>
+										<td>e-control</td>
+									  </tr>
+									  <tr>
+										<td>41644</td>
+										<td>don-aws-paris-01</td>
 										<td>e-control</td>
 									  </tr>
 									</tbody>
@@ -487,7 +550,7 @@
 							</div>
 							
 						</div>
-						<div class="row monitoring" style="background: #dd5928;">
+						<div class="row monitoring">
 							<div class="monitoring-title">Monitoring</div>
 							<div class="table-monitoring">
 								<div>Event</div>
@@ -541,7 +604,7 @@
 							</div>
 							
 						</div>
-						<div class="row comments" style="margin-bottom: 20px;">
+						<div class="row comments" style="margin-bottom: 20px; margin-top: 30px;">
 							<div class="col-sm-12">
 								<div class="request-detail-title">Comment thread</div>
 								<div class="row comment-row">
